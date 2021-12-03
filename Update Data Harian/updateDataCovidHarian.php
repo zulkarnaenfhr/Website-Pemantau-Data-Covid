@@ -1,3 +1,27 @@
+<?php 
+    $APIUpdateData = "https://data.covid19.go.id/public/api/update.json";
+    $konten = file_get_contents($APIUpdateData);
+    $data = json_decode($konten, true);
+
+    $penambahanKasusPositif = $data['update']['penambahan']['jumlah_positif'];
+    $totalJumlahKasusPositif = $data['update']['total']['jumlah_positif'];
+    $penambahanDirawat = $data['update']['penambahan']['jumlah_dirawat'];
+    $totalJumlahDirawat = $data['update']['total']['jumlah_dirawat'];
+    $penambahanKasusSembuh = $data['update']['penambahan']['jumlah_sembuh'];
+    $totalJumlahKasusSembuh = $data['update']['total']['jumlah_sembuh'];
+    $penambahanKasusMeninggal = $data['update']['penambahan']['jumlah_meninggal'];
+    $totalJumlahKasusMeninggal = $data['update']['total']['jumlah_meninggal'];
+
+    $penambahanKasusPositif = number_format($penambahanKasusPositif);
+    $totalJumlahKasusPositif = number_format($totalJumlahKasusPositif);
+    $penambahanDirawat = number_format($penambahanDirawat);
+    $totalJumlahDirawat = number_format($totalJumlahDirawat);
+    $penambahanKasusSembuh = number_format($penambahanKasusSembuh);
+    $totalJumlahKasusSembuh = number_format($totalJumlahKasusSembuh);
+    $penambahanKasusMeninggal = number_format($penambahanKasusMeninggal);
+    $totalJumlahKasusMeninggal = number_format($totalJumlahKasusMeninggal);
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -66,13 +90,19 @@
                             <div class="cardFahriPendek row1-point1">
                                 <div class="container">
                                     <p class="valueCard">
-                                        4.400.100
+                                        <?php 
+                                            echo $totalJumlahKasusPositif
+                                        ?>
                                     </p>
                                     <p class="keyCard">
                                         TERKONFIRMASI
                                     </p>
                                     <p class="angkaCard">
-                                        <span class="angka">+190</span> Kasus
+                                        <span class="angka">
+                                            <?php 
+                                                echo "+".$penambahanKasusPositif
+                                            ?>
+                                        </span> Kasus
                                     </p>
                                 </div>
                             </div>
@@ -81,13 +111,19 @@
                             <div class="cardFahriPendek row1-point2">
                                 <div class="container">
                                     <p class="valueCard">
-                                        4.400.100
+                                        <?php 
+                                            echo $totalJumlahDirawat
+                                        ?>
                                     </p>
                                     <p class="keyCard">
                                         KASUS AKTIF
                                     </p>
                                     <p class="angkaCard">
-                                        <span class="angka">+190</span> Kasus Aktif
+                                        <span class="angka">
+                                            <?php               
+                                                echo $penambahanDirawat
+                                            ?>
+                                        </span> Kasus Aktif
                                     </p>
                                 </div>
                             </div>
@@ -96,13 +132,19 @@
                             <div class="cardFahriPendek row1-point3">
                                 <div class="container">
                                     <p class="valueCard">
-                                        4.400.100
+                                        <?php 
+                                            echo $totalJumlahKasusSembuh
+                                        ?>
                                     </p>
                                     <p class="keyCard">
                                         SEMBUH
                                     </p>
                                     <p class="angkaCard">
-                                        <span class="angka">+190</span> Kasus Sembuh
+                                        <span class="angka">
+                                            <?php 
+                                                echo "+".$penambahanKasusSembuh
+                                            ?>
+                                        </span> Kasus Sembuh
                                     </p>
                                 </div>
                             </div>
@@ -111,13 +153,19 @@
                             <div class="cardFahriPendek row1-point4">
                                 <div class="container">
                                     <p class="valueCard">
-                                        4.400.100
+                                        <?php 
+                                            echo $totalJumlahKasusMeninggal
+                                        ?>
                                     </p>
                                     <p class="keyCard">
                                         MENINGGAL
                                     </p>
                                     <p class="angkaCard">
-                                        <span class="angka">+190</span> Kasus Meninggal
+                                        <span class="angka">
+                                            <?php 
+                                                echo "+".$penambahanKasusMeninggal
+                                            ?>
+                                        </span> Kasus Meninggal
                                     </p>
                                 </div>
                             </div>
