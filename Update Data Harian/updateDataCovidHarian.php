@@ -1,26 +1,72 @@
 <?php 
     $APIUpdateData = "https://data.covid19.go.id/public/api/update.json";
-    $konten = file_get_contents($APIUpdateData);
-    $data = json_decode($konten, true);
+    $kontenAPIUpdateData = file_get_contents($APIUpdateData);
+    $dataUpdateData = json_decode($kontenAPIUpdateData, true);
 
-    $penambahanKasusPositif = $data['update']['penambahan']['jumlah_positif'];
-    $totalJumlahKasusPositif = $data['update']['total']['jumlah_positif'];
-    $penambahanDirawat = $data['update']['penambahan']['jumlah_dirawat'];
-    $totalJumlahDirawat = $data['update']['total']['jumlah_dirawat'];
-    $penambahanKasusSembuh = $data['update']['penambahan']['jumlah_sembuh'];
-    $totalJumlahKasusSembuh = $data['update']['total']['jumlah_sembuh'];
-    $penambahanKasusMeninggal = $data['update']['penambahan']['jumlah_meninggal'];
-    $totalJumlahKasusMeninggal = $data['update']['total']['jumlah_meninggal'];
-
+    $penambahanKasusPositif = $dataUpdateData['update']['penambahan']['jumlah_positif'];
     $penambahanKasusPositif = number_format($penambahanKasusPositif);
+    $totalJumlahKasusPositif = $dataUpdateData['update']['total']['jumlah_positif'];
     $totalJumlahKasusPositif = number_format($totalJumlahKasusPositif);
+    $penambahanDirawat = $dataUpdateData['update']['penambahan']['jumlah_dirawat'];
     $penambahanDirawat = number_format($penambahanDirawat);
+    $totalJumlahDirawat = $dataUpdateData['update']['total']['jumlah_dirawat'];
     $totalJumlahDirawat = number_format($totalJumlahDirawat);
+    $penambahanKasusSembuh = $dataUpdateData['update']['penambahan']['jumlah_sembuh'];
     $penambahanKasusSembuh = number_format($penambahanKasusSembuh);
+    $totalJumlahKasusSembuh = $dataUpdateData['update']['total']['jumlah_sembuh'];
     $totalJumlahKasusSembuh = number_format($totalJumlahKasusSembuh);
+    $penambahanKasusMeninggal = $dataUpdateData['update']['penambahan']['jumlah_meninggal'];
     $penambahanKasusMeninggal = number_format($penambahanKasusMeninggal);
+    $totalJumlahKasusMeninggal = $dataUpdateData['update']['total']['jumlah_meninggal'];
     $totalJumlahKasusMeninggal = number_format($totalJumlahKasusMeninggal);
 ?>
+
+<?php 
+    $APIUpdateDataTesdanVaksin = "https://data.covid19.go.id/public/api/pemeriksaan-vaksinasi.json";
+    $kontenUpdateDataTesdanVaksin = file_get_contents($APIUpdateDataTesdanVaksin);
+    $dataUpdateDataTesdanVaksin = json_decode($kontenUpdateDataTesdanVaksin, true);
+
+    //total spesimen diperiksa
+    $penambahanJumlahSpesimenDiperiksaPcrTcm = $dataUpdateDataTesdanVaksin['pemeriksaan']['penambahan']['jumlah_spesimen_pcr_tcm'];
+    $penambahanJumlahSpesimenDiperiksaPcrTcm = number_format($penambahanJumlahSpesimenDiperiksaPcrTcm);
+    $totalJumlahSpesimenDiperiksaPcrTcm = $dataUpdateDataTesdanVaksin['pemeriksaan']['total']['jumlah_spesimen_pcr_tcm'];
+    
+    $penambahanJumlahSpesimenDiperiksaAntigen = $dataUpdateDataTesdanVaksin['pemeriksaan']['penambahan']['jumlah_spesimen_antigen'];
+    $penambahanJumlahSpesimenDiperiksaAntigen = number_format($penambahanJumlahSpesimenDiperiksaAntigen);
+    $totalJumlahSpesimenDiperiksaAntigen = $dataUpdateDataTesdanVaksin['pemeriksaan']['total']['jumlah_spesimen_antigen'];
+    
+    $totalSpesimenDiperiksa = $totalJumlahSpesimenDiperiksaPcrTcm + $totalJumlahSpesimenDiperiksaAntigen;
+    $totalJumlahSpesimenDiperiksaAntigen = number_format($totalJumlahSpesimenDiperiksaAntigen);
+    $totalJumlahSpesimenDiperiksaPcrTcm = number_format($totalJumlahSpesimenDiperiksaPcrTcm);
+    $totalSpesimenDiperiksa = number_format($totalSpesimenDiperiksa);
+
+    // total orang diperiksa
+    $penambahanJumlahOrangDiperiksaPcrTcm = $dataUpdateDataTesdanVaksin['pemeriksaan']['penambahan']['jumlah_orang_pcr_tcm'];
+    $penambahanJumlahOrangDiperiksaPcrTcm = number_format($penambahanJumlahOrangDiperiksaPcrTcm);
+    $totalJumlahSpesimenOrangDiperiksaPcrTcm = $dataUpdateDataTesdanVaksin['pemeriksaan']['total']['jumlah_orang_pcr_tcm'];
+
+    $penambahanJumlahorangDiperiksaAntigen = $dataUpdateDataTesdanVaksin['pemeriksaan']['penambahan']['jumlah_orang_antigen'];
+    $penambahanJumlahorangDiperiksaAntigen = number_format($penambahanJumlahorangDiperiksaAntigen);
+    $totalJumlahorangDiperiksaAntigen = $dataUpdateDataTesdanVaksin['pemeriksaan']['total']['jumlah_orang_antigen'];
+
+    $totalOrangDiperiksa = $totalJumlahSpesimenOrangDiperiksaPcrTcm + $totalJumlahorangDiperiksaAntigen;
+    $totalJumlahSpesimenOrangDiperiksaPcrTcm = number_format($totalJumlahSpesimenOrangDiperiksaPcrTcm);
+    $totalJumlahorangDiperiksaAntigen = number_format($totalJumlahorangDiperiksaAntigen);
+    $totalOrangDiperiksa = number_format($totalOrangDiperiksa);
+?>
+<?php 
+    // vaksinasi
+    $totalVaksinasiKe1 = $dataUpdateDataTesdanVaksin['vaksinasi']['total']['jumlah_vaksinasi_1'];
+    $totalVaksinasiKe1 = number_format($totalVaksinasiKe1);
+    $penambahanVaksinasiKe1 = $dataUpdateDataTesdanVaksin['vaksinasi']['penambahan']['jumlah_vaksinasi_1'];
+    $penambahanVaksinasiKe1 = number_format($penambahanVaksinasiKe1);
+    $totalVaksinasiKe2 = $dataUpdateDataTesdanVaksin['vaksinasi']['total']['jumlah_vaksinasi_2'];
+    $totalVaksinasiKe2 = number_format($totalVaksinasiKe2);
+    $penambahanVaksinasiKe2 = $dataUpdateDataTesdanVaksin['vaksinasi']['penambahan']['jumlah_vaksinasi_2'];
+    $penambahanVaksinasiKe2 = number_format($penambahanVaksinasiKe2);
+
+?>
+
 
 <!doctype html>
 <html lang="en">
@@ -34,6 +80,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+    <!-- icon awesome CSS     -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <!-- css -->
     <link rel="stylesheet" href="styleUpdateDataCovidHarian.css">
 
     <title>Covid-19 Data</title>
@@ -84,11 +134,13 @@
             <div class="container-fluid">
                 <div class="container">
                     <p class="homeStatistikIndonesiaUpdate-Judul">Monitoring Covid-19 Indonesia Data</p>
-
                     <div class="row">
-                        <div class="col-3 cardSection1" style="border: 1px solid black;">
+                        <div class="col-3 cardSection1">
                             <div class="cardFahriPendek row1-point1">
                                 <div class="container">
+                                    <div class="row1-icon row1-point1-icon">
+                                        <i class="fas fa-plus"></i>
+                                    </div>
                                     <p class="valueCard">
                                         <?php 
                                             echo $totalJumlahKasusPositif
@@ -107,9 +159,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-3 cardSection1" style="border: 1px solid black;">
+                        <div class="col-3 cardSection1">
                             <div class="cardFahriPendek row1-point2">
                                 <div class="container">
+                                    <div class="row1-icon row1-point2-icon">
+                                        <i class="fas fa-user-md"></i>
+                                    </div>
                                     <p class="valueCard">
                                         <?php 
                                             echo $totalJumlahDirawat
@@ -120,7 +175,7 @@
                                     </p>
                                     <p class="angkaCard">
                                         <span class="angka">
-                                            <?php               
+                                            <?php
                                                 echo $penambahanDirawat
                                             ?>
                                         </span> Kasus Aktif
@@ -128,9 +183,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-3 cardSection1" style="border: 1px solid black;">
+                        <div class="col-3 cardSection1">
                             <div class="cardFahriPendek row1-point3">
                                 <div class="container">
+                                    <div class="row1-icon row1-point3-icon">
+                                        <i class="fas fa-heartbeat"></i>
+                                    </div>
                                     <p class="valueCard">
                                         <?php 
                                             echo $totalJumlahKasusSembuh
@@ -149,9 +207,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-3 cardSection1" style="border: 1px solid black;">
+                        <div class="col-3 cardSection1">
                             <div class="cardFahriPendek row1-point4">
                                 <div class="container">
+                                    <div class="row1-icon row1-point4-icon">
+                                        <i class="fas fa-minus"></i>
+                                    </div>
                                     <p class="valueCard">
                                         <?php 
                                             echo $totalJumlahKasusMeninggal
@@ -173,40 +234,88 @@
                     </div>
 
                     <div class="row" style="margin-top: 1.2rem;">
-                        <div class="col-6" style="border: 1px solid black;">
+                        <div class="col-6">
                             <div class="cardFahriPanjang">
                                 <div class="container">
+                                    <div class="row2-icon row2-point1-icon">
+                                        <i class="fas fa-code-branch"></i>
+                                    </div>
                                     <p class="valueCard">
-                                        4.400.100
+                                        <?php 
+                                            echo $totalSpesimenDiperiksa
+                                        ?>
                                     </p>
                                     <p class="keyCard">
                                         TOTAL SPESIMEN DIPERIKSA
                                     </p>
                                     <p class="angkaCard">
-                                        PCR + TCM=<span class="totalPcrTcm">50.000.000</span> (+<span
-                                            class="penambahanPcrTcm">32.200</span>)
+                                        PCR + TCM=
+                                        <span class="totalPcrTcm">
+                                            <?php 
+                                                echo $totalJumlahSpesimenDiperiksaPcrTcm
+                                            ?>
+                                        </span> (+
+                                        <span class="penambahanPcrTcm">
+                                            <?php 
+                                                echo $penambahanJumlahSpesimenDiperiksaPcrTcm
+                                            ?>
+                                        </span>)
                                     </p>
                                     <p class="angkaCard">
-                                        ANTIGEN=<span class="totalAntigen">23.000.000</span> (+<span class="penambahanAntigen">12.000</span>)
+                                        ANTIGEN=
+                                        <span class="totalAntigen">
+                                            <?php 
+                                                echo $totalJumlahSpesimenDiperiksaAntigen
+                                            ?>
+                                        </span> (+
+                                        <span class="penambahanAntigen">
+                                            <?php 
+                                                echo $penambahanJumlahSpesimenDiperiksaAntigen
+                                            ?>
+                                        </span>)
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6" style="border: 1px solid black;">
+                        <div class="col-6">
                             <div class="cardFahriPanjang">
                                 <div class="container">
+                                    <div class="row2-icon row2-point2-icon">
+                                        <i class="fas fa-thermometer"></i>
+                                    </div>
                                     <p class="valueCard">
-                                        4.400.100
+                                        <?php 
+                                            echo $totalOrangDiperiksa
+                                        ?>
                                     </p>
                                     <p class="keyCard">
                                         TOTAL ORANG DIPERIKSA
                                     </p>
                                     <p class="angkaCard">
-                                        PCR + TCM=<span class="totalPcrTcm">50.000.000</span> (+<span
-                                            class="penambahanPcrTcm">32.200</span>)
+                                        PCR + TCM=
+                                        <span class="totalPcrTcm">
+                                            <?php 
+                                                echo $totalJumlahSpesimenOrangDiperiksaPcrTcm
+                                            ?>
+                                        </span> (+
+                                        <span class="penambahanPcrTcm">
+                                            <?php 
+                                                echo $penambahanJumlahOrangDiperiksaPcrTcm
+                                            ?>
+                                        </span>)
                                     </p>
                                     <p class="angkaCard">
-                                        ANTIGEN=<span class="totalAntigen">23.000.000</span> (+<span class="penambahanAntigen">12.000</span>)
+                                        ANTIGEN=
+                                        <span class="totalAntigen">
+                                            <?php 
+                                                echo $totalJumlahorangDiperiksaAntigen
+                                            ?>
+                                        </span> (+
+                                        <span class="penambahanAntigen">
+                                            <?php 
+                                                echo $penambahanJumlahorangDiperiksaAntigen
+                                            ?>
+                                        </span>)
                                     </p>
                                 </div>
                             </div>
@@ -214,42 +323,48 @@
                     </div>
 
                     <div class="row" style="margin-top: 1.2rem;">
-                        <div class="col-6" style="border: 1px solid black;">
+                        <div class="col-6">
                             <div class="cardFahriPanjang2">
                                 <div class="container">
+                                    <div class="row3-icon row3-point1-icon">
+                                        <i class="fas fa-syringe"></i>
+                                    </div>
                                     <p class="valueCard">
-                                        4.400.100
+                                        <?php 
+                                            echo $totalVaksinasiKe1
+                                        ?>
                                     </p>
                                     <p class="keyCard">
-                                        TOTAL SPESIMEN DIPERIKSA
+                                        VAKSINASI KE-1
                                     </p>
                                     <p class="angkaCard">
-                                        PCR + TCM=<span class="totalPcrTcm">50.000.000</span> (+<span
-                                            class="penambahanPcrTcm">32.200</span>)
-                                    </p>
-                                    <p class="angkaCard">
-                                        ANTIGEN=<span class="totalAntigen">23.000.000</span> (+<span
-                                            class="penambahanAntigen">12.000</span>)
+                                        +
+                                        <?php 
+                                            echo $penambahanVaksinasiKe1
+                                        ?>
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6" style="border: 1px solid black;">
+                        <div class="col-6">
                             <div class="cardFahriPanjang2">
                                 <div class="container">
+                                    <div class="row3-icon row3-point2-icon">
+                                        <i class="fas fa-syringe"></i>
+                                    </div>
                                     <p class="valueCard">
-                                        4.400.100
+                                        <?php 
+                                            echo $totalVaksinasiKe2
+                                        ?>
                                     </p>
                                     <p class="keyCard">
-                                        TOTAL ORANG DIPERIKSA
+                                        VAKSINASI KE-2
                                     </p>
                                     <p class="angkaCard">
-                                        PCR + TCM=<span class="totalPcrTcm">50.000.000</span> (+<span
-                                            class="penambahanPcrTcm">32.200</span>)
-                                    </p>
-                                    <p class="angkaCard">
-                                        ANTIGEN=<span class="totalAntigen">23.000.000</span> (+<span
-                                            class="penambahanAntigen">12.000</span>)
+                                        +
+                                        <?php 
+                                            echo $penambahanVaksinasiKe2
+                                        ?>
                                     </p>
                                 </div>
                             </div>
@@ -258,6 +373,9 @@
                 </div>
             </div>
         </section>
+        <footer>
+            <p>Design and Develop by <span>SpaceCapt</span>@2021</p>
+        </footer>
     </main>
 
     <!-- Optional JavaScript; choose one of the two! -->

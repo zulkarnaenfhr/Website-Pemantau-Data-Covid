@@ -3,7 +3,7 @@
     $konten = file_get_contents($APIUpdateData);
     $data = json_decode($konten, true);
 
-    $penambahanKasusPositif = number_format($data['update']['penambahan']['jumlah_positif']);
+    $penambahanKasusPositif = $data['update']['penambahan']['jumlah_positif'];
     $totalJumlahKasusPositif = $data['update']['total']['jumlah_positif'];
     $penambahanDirawat = $data['update']['penambahan']['jumlah_dirawat'];
     $totalJumlahDirawat = $data['update']['total']['jumlah_dirawat'];
@@ -13,4 +13,5 @@
     $totalJumlahKasusMeninggal = $data['update']['total']['jumlah_meninggal'];
 
     // $totalJumlahKasusPositif = number_format($totalJumlahKasusPositif);
+    
 ?>

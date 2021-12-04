@@ -16,6 +16,10 @@ body {
     color: seagreen;
 }
 
+#homeStatistikIndonesiaUpdate {
+    padding-top: 1.2rem;
+}
+
 .homeStatistikIndonesiaUpdate-Judul {
     text-align: center;
     font-size: 25px;
@@ -27,6 +31,7 @@ body {
     width: 100%;
     color: white;
     height: 150px;
+    font-weight: 600;
 }
 
 .valueCard {
@@ -42,6 +47,7 @@ body {
 }
 
 .angkaCard {
+    z-index: 2;
     margin-top: -0.9rem;
     font-size: 18px;
     font-weight: 600;
@@ -50,6 +56,35 @@ body {
 .row1-point1 {
     background-color: #091353;
 }
+
+.row1-icon {
+    position: absolute;
+    z-index: 1;
+    color: grey;
+    opacity: 40%;
+    margin-top: -0.5rem;
+}
+
+.row1-point1-icon {
+    font-size: 7rem;
+    padding-left: 11rem;
+}
+
+.row1-point2-icon {
+    font-size: 7rem;
+    padding-left: 10.8rem;
+}
+
+.row1-point3-icon {
+    font-size: 7rem;
+    padding-left: 10rem;
+}
+
+.row1-point4-icon {
+    font-size: 7rem;
+    padding-left: 10rem;
+}
+
 
 .row1-point2 {
     background-color: #ecac5d;
@@ -61,21 +96,78 @@ body {
 }
 
 .row1-point4 {
-    background-color: #986d8e;
+    background-color: #F6AE99;
 }
 
-.cardFahriPanjang{
+.cardFahriPanjang {
     color: white;
     border-radius: 15px;
     width: 100%;
-    background-color: #7F7C82;
+    background-color: #6d6d6d;
     height: 170px;
+    font-weight: 600;
 }
 
-.cardFahriPanjang2{
+.row2-icon{
+    position: absolute;
+    z-index: 1;
+    color: grey;
+    opacity: 40%;
+    margin-top: -0.5rem;
+}
+
+.row2-point1-icon{
+    font-size: 7.5rem;
+    padding-left: 30rem;
+}
+
+.row2-point2-icon{
+    font-size: 7.5rem;
+    padding-left: 29rem;
+}
+
+.row3-icon{
+    position: absolute;
+    z-index: 1;
+    color: grey;
+    opacity: 40%;
+    margin-top: -0.5rem;
+}
+
+.row3-point1-icon{
+    font-size: 7rem;
+    padding-left: 30rem;
+}
+
+.row3-point2-icon{
+    font-size: 7rem;
+    padding-left: 30rem;
+}
+
+.cardFahriPanjang2 {
     color: white;
     border-radius: 15px;
     width: 100%;
-    background-color: #64C9CF;
-    height: 170px;
+    background-color: #64c9cf;
+    height: 150px;
+    font-weight: 600;
+}
+
+footer {
+    background-color: bisque;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    font-weight: 500;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+}
+footer p {
+    padding-top: 14px;
+    color: #b91646;
+}
+
+footer p span {
+    color: #105652;
 }

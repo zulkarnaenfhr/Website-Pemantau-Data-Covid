@@ -1,0 +1,19 @@
+.cardFhr {
+    width: 500px;
+    height: 250px;
+    position: absolute;
+    z-index: 1;
+    background-color: rosybrown;
+}
+
+.iconnya {
+    font-size: 70px;
+    position: absolute;
+    z-index: 2;
+}
+
+h3 {
+    position: absolute;
+    z-index: 3;
+    color: white;
+}
