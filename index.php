@@ -89,7 +89,7 @@
                     <div class="container">
                         <p class="homeStatistikIndonesiaUpdate-Judul">Monitoring Covid-19 Indonesia Data</p>
                         <div class="row">
-                            <div class="col-3 cardSection1">
+                            <div class="col-xl-3 col-lg-6 col-md-12 cardSection1">
                                 <div class="cardFahriPendek row1-point1">
                                     <div class="container">
                                         <div class="row1-icon row1-point1-icon">
@@ -114,7 +114,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-3 cardSection1">
+                            <div class="col-xl-3 col-lg-6 col-md-12 cardSection1 cardSection1-row2">
                                 <div class="cardFahriPendek row1-point2">
                                     <div class="container">
                                         <div class="row1-icon row1-point2-icon">
@@ -139,7 +139,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-3 cardSection1">
+                            <div class="col-xl-3 col-lg-6 col-md-12 col-lg-row2 cardSection1">
                                 <div class="cardFahriPendek row1-point3">
                                     <div class="container">
                                         <div class="row1-icon row1-point3-icon">
@@ -164,7 +164,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-3 cardSection1">
+                            <div class="col-xl-3 col-lg-6 col-md-12 col-lg-row2 cardSection1">
                                 <div class="cardFahriPendek row1-point4">
                                     <div class="container">
                                         <div class="row1-icon row1-point4-icon">
@@ -192,7 +192,7 @@
                         </div>
 
                         <div class="row" style="margin-top: 1.2rem;">
-                            <div class="col-6">
+                            <div class="col-lg-6 col-md-12">
                                 <div class="cardFahriPanjang">
                                     <div class="container">
                                         <div class="row2-icon row2-point1-icon">
@@ -201,7 +201,7 @@
                                         <p class="valueCard">
                                             <?php 
                                             echo $totalSpesimenDiperiksa
-                                        ?>
+                                            ?> (+<?php echo $totalSpesimenDiperiksaPerHari?>)
                                         </p>
                                         <p class="keyCard">
                                             TOTAL SPESIMEN DIPERIKSA
@@ -237,7 +237,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-lg-6 col-md-12 cardBawah">
                                 <div class="cardFahriPanjang">
                                     <div class="container">
                                         <div class="row2-icon row2-point2-icon">
@@ -246,7 +246,7 @@
                                         <p class="valueCard">
                                             <?php 
                                             echo $totalOrangDiperiksa
-                                        ?>
+                                            ?> (+<?php echo $totalOrangDiperiksaPerHari ?>)
                                         </p>
                                         <p class="keyCard">
                                             TOTAL ORANG DIPERIKSA
@@ -285,7 +285,7 @@
                         </div>
 
                         <div class="row" style="margin-top: 1.2rem;">
-                            <div class="col-6">
+                            <div class="col-lg-6 col-md-12">
                                 <div class="cardFahriPanjang2">
                                     <div class="container">
                                         <div class="row3-icon row3-point1-icon">
@@ -308,7 +308,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-lg-6 col-md-12 cardBawah">
                                 <div class="cardFahriPanjang2">
                                     <div class="container">
                                         <div class="row3-icon row3-point2-icon">
@@ -337,8 +337,12 @@
             </section>
         </main>
         <footer>
-            <p>Design and Develop by
-                <span>SpaceCapt</span>@2021</p>
+            <div class="container-fluid">
+                <div class="container">
+                    <p>Design and Develop by
+                        <span>SpaceCapt</span>@2021</p>
+                </div>
+            </div>
         </footer>
 
         <!-- Optional JavaScript; choose one of the two! -->

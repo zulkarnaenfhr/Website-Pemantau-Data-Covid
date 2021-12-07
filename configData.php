@@ -28,28 +28,32 @@
 
     //total spesimen diperiksa
     $penambahanJumlahSpesimenDiperiksaPcrTcm = $dataUpdateDataTesdanVaksin['pemeriksaan']['penambahan']['jumlah_spesimen_pcr_tcm'];
-    $penambahanJumlahSpesimenDiperiksaPcrTcm = number_format($penambahanJumlahSpesimenDiperiksaPcrTcm);
     $totalJumlahSpesimenDiperiksaPcrTcm = $dataUpdateDataTesdanVaksin['pemeriksaan']['total']['jumlah_spesimen_pcr_tcm'];
     
     $penambahanJumlahSpesimenDiperiksaAntigen = $dataUpdateDataTesdanVaksin['pemeriksaan']['penambahan']['jumlah_spesimen_antigen'];
-    $penambahanJumlahSpesimenDiperiksaAntigen = number_format($penambahanJumlahSpesimenDiperiksaAntigen);
     $totalJumlahSpesimenDiperiksaAntigen = $dataUpdateDataTesdanVaksin['pemeriksaan']['total']['jumlah_spesimen_antigen'];
     
+    $totalSpesimenDiperiksaPerHari = $penambahanJumlahSpesimenDiperiksaAntigen+$penambahanJumlahSpesimenDiperiksaPcrTcm;
+    $totalSpesimenDiperiksaPerHari = number_format($totalSpesimenDiperiksaPerHari);
     $totalSpesimenDiperiksa = $totalJumlahSpesimenDiperiksaPcrTcm + $totalJumlahSpesimenDiperiksaAntigen;
+    $penambahanJumlahSpesimenDiperiksaAntigen = number_format($penambahanJumlahSpesimenDiperiksaAntigen);
+    $penambahanJumlahSpesimenDiperiksaPcrTcm = number_format($penambahanJumlahSpesimenDiperiksaPcrTcm);
     $totalJumlahSpesimenDiperiksaAntigen = number_format($totalJumlahSpesimenDiperiksaAntigen);
     $totalJumlahSpesimenDiperiksaPcrTcm = number_format($totalJumlahSpesimenDiperiksaPcrTcm);
     $totalSpesimenDiperiksa = number_format($totalSpesimenDiperiksa);
 
     // total orang diperiksa
     $penambahanJumlahOrangDiperiksaPcrTcm = $dataUpdateDataTesdanVaksin['pemeriksaan']['penambahan']['jumlah_orang_pcr_tcm'];
-    $penambahanJumlahOrangDiperiksaPcrTcm = number_format($penambahanJumlahOrangDiperiksaPcrTcm);
     $totalJumlahSpesimenOrangDiperiksaPcrTcm = $dataUpdateDataTesdanVaksin['pemeriksaan']['total']['jumlah_orang_pcr_tcm'];
 
     $penambahanJumlahorangDiperiksaAntigen = $dataUpdateDataTesdanVaksin['pemeriksaan']['penambahan']['jumlah_orang_antigen'];
-    $penambahanJumlahorangDiperiksaAntigen = number_format($penambahanJumlahorangDiperiksaAntigen);
     $totalJumlahorangDiperiksaAntigen = $dataUpdateDataTesdanVaksin['pemeriksaan']['total']['jumlah_orang_antigen'];
 
+    $totalOrangDiperiksaPerHari = $penambahanJumlahOrangDiperiksaPcrTcm+$penambahanJumlahorangDiperiksaAntigen;
+    $totalOrangDiperiksaPerHari = number_format($totalOrangDiperiksaPerHari);
     $totalOrangDiperiksa = $totalJumlahSpesimenOrangDiperiksaPcrTcm + $totalJumlahorangDiperiksaAntigen;
+    $penambahanJumlahorangDiperiksaAntigen = number_format($penambahanJumlahorangDiperiksaAntigen);
+    $penambahanJumlahOrangDiperiksaPcrTcm = number_format($penambahanJumlahOrangDiperiksaPcrTcm);
     $totalJumlahSpesimenOrangDiperiksaPcrTcm = number_format($totalJumlahSpesimenOrangDiperiksaPcrTcm);
     $totalJumlahorangDiperiksaAntigen = number_format($totalJumlahorangDiperiksaAntigen);
     $totalOrangDiperiksa = number_format($totalOrangDiperiksa);
