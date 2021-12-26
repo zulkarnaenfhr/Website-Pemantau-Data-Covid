@@ -69,3 +69,35 @@
     $penambahanVaksinasiKe2 = $dataUpdateDataTesdanVaksin['vaksinasi']['penambahan']['jumlah_vaksinasi_2'];
     $penambahanVaksinasiKe2 = number_format($penambahanVaksinasiKe2);
 ?>
+
+<?php 
+    // buat function get data
+    function getProv () {
+        $apiGetProvinsi = "https://rs-bed-covid-api.vercel.app/api/get-provinces";
+        $kontenGetProvinsi = file_get_contents($apiGetProvinsi);
+        $dataProvinsi = json_decode($kontenGetProvinsi, true);
+        $dataProvinsi = $dataProvinsi["provinces"];
+
+        return $dataProvinsi;
+    }
+
+    if(isset($_POST['kodeProv'])){
+        $kodeProv = $_POST["kodeProv"];
+        $apiGetKota = "https://rs-bed-covid-api.vercel.app/api/get-cities?provinceid=$kodeProv";
+        $kontenKota = file_get_contents($apiGetKota);
+        $dataKota = json_decode($kontenKota,true);
+        $dataKota = $dataKota["cities"];
+
+        $varName = "name";
+        for ($i=0; $i < count($dataKota); $i++) { 
+		 	echo '<option value='.$dataKota[$i]['id'].'>'.$dataKota[$i]['name'].'</option>';
+        }
+    }
+    function getListHospital ($kodeProv,$kodeKota,$type){
+        $apiGetHospital = "https://rs-bed-covid-api.vercel.app/api/get-hospitals?provinceid=$kodeProv&cityid=$kodeKota&type=$type";
+        $kontenHospital = file_get_contents($apiGetHospital);
+        $data = json_decode($kontenHospital,true);
+        $dataHospital = $data['hospitals'];
+        return $dataHospital;
+    }
+?>

@@ -45,38 +45,18 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
                             <a
-                                class="nav-link dropdown-toggle"
+                                class="nav-link active"
+                                aria-current="page"
                                 href="#"
-                                id="navbarDropdown"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="#">Action</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                </li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </li>
-                            </ul>
+                                data-bs-toggle="collapse"
+                                data-bs-target=".navbar-collapse.show">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            <a
+                                class="nav-link"
+                                href="./Cek Bed Covid/Get Location Option/GetLocation.php"
+                                >Cek Bed Covid</a>
                         </li>
                     </ul>
                 </div>
@@ -201,7 +181,8 @@
                                         <p class="valueCard">
                                             <?php 
                                             echo $totalSpesimenDiperiksa
-                                            ?> (+<?php echo $totalSpesimenDiperiksaPerHari?>)
+                                            ?>
+                                            (+<?php echo $totalSpesimenDiperiksaPerHari?>)
                                         </p>
                                         <p class="keyCard">
                                             TOTAL SPESIMEN DIPERIKSA
@@ -246,7 +227,8 @@
                                         <p class="valueCard">
                                             <?php 
                                             echo $totalOrangDiperiksa
-                                            ?> (+<?php echo $totalOrangDiperiksaPerHari ?>)
+                                            ?>
+                                            (+<?php echo $totalOrangDiperiksaPerHari ?>)
                                         </p>
                                         <p class="keyCard">
                                             TOTAL ORANG DIPERIKSA
