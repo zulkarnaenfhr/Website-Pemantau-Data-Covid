@@ -59,9 +59,7 @@
                                 <h6 class="daftarRumahSakit-locationInfo">
                                     Menampilkan Bed Non-Covid untuk Provinsi <?php echo $getInformasiProvinsi ?>, Kota <?php echo $getInformasiKota ?>
                                 </h6> 
-                            <?php } ?>
-                               
-                            
+                            <?php } ?>  
                         </div>
                         <button class="buttonBacktoSearch">
                             <a href="../Get Location Option/GetLocation.php">Cari Rumah Sakit Lokasi Lain</a>
