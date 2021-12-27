@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Dynamic Dependent Select Box using jQuery, Ajax and PHP</title>
+        <title>Cek Lokasi</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link
             rel="stylesheet"
             href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <!-- js buat jquery  -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script
             src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -28,7 +30,7 @@
                 <p class="GetLocation-Title">Cek Ketersediaan Bed <br> Rumah Sakit</p>
                 <div class="form-container">
                     <p class="GetLocation-Desc">Pilih Lokasi Pengecekkan Ketersediaan Bed</p>
-                    <form action="tes.php" method="post">
+                    <form action="../Cek Bed Covid/DaftarRumahSakit.php" method="post">
                         <div class="radio-toolbar">
                             <input type="radio" id="Covid-Option" name="type" value="1" required>
                             <label for="Covid-Option">
@@ -39,7 +41,6 @@
                             <label for="NonCovid-Option">
                                 Non-Covid<i class="iconChecked fas fa-check"></i>
                             </label>
-
                         </div>
                         <div class="form-group">
                             <label for="provinsi">Select Provinsi</label>

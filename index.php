@@ -58,6 +58,12 @@
                                 href="./Cek Bed Covid/Get Location Option/GetLocation.php"
                                 >Cek Bed Covid</a>
                         </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="./Cek Bed Covid/Cek Bed Covid/DaftarRumahSakit.php"
+                                >Daftar Rumah Sakit</a>
+                        </li>
                     </ul>
                 </div>
             </div>
