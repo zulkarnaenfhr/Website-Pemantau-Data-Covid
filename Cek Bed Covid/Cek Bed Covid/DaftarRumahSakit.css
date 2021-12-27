@@ -1,3 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+/* font-family: 'Poppins', sans-serif; */
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.navbarBranding {
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: 800;
+    color: #ec255a;
+}
+
+.navbarBranding:hover {
+    color: seagreen;
+}
+
+#homeStatistikIndonesiaUpdate {
+    padding-top: 1.2rem;
+}
+
+.homeStatistikIndonesiaUpdate-Judul {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.cardSizing{
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
 #navbarLocation {
     height: 88px;
     width: 100vw;
@@ -59,4 +92,32 @@
     height: 45px;
     border-radius: 4px;
     margin-right: 10px;
+}
+
+.card{
+    width: auto;
+    margin: 5em 5em;
+    float: none;
+}
+
+.card-text .bed{
+    margin-left: 1.23em;
+}
+
+.card-text .info{
+    margin-left: 2.15em;
+}
+
+@media only screen and (max-width: 600px) {
+    .cardSizing{
+        margin-left: 0.75em;
+        margin-right: 0.75em;
+    }
+
+    .card {
+        width: 15em;
+        margin: 2em auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+}
 }
