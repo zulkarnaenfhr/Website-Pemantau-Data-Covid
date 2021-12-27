@@ -9,7 +9,6 @@ body {
 .daftarRumahSakit-content {
     margin-right: 15%;
     margin-left: 15%;
-    height: 200;
 }
 
 .navInformation {
@@ -118,5 +117,59 @@ body {
         margin: 2em auto; /* Added */
         float: none; /* Added */
         margin-bottom: 10px; /* Added */
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .daftarRumahSakit-content {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .daftarRumahSakit-content {
+        margin-right: 7%;
+        margin-left: 7%;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .daftarRumahSakit-content {
+        margin-right: 0%;
+        margin-left: 0%;
+    }
+    .card {
+        margin: 0.5em 2em;
+    }
+    #daftarRumahSakit{
+        padding-top: 5%;
+    }
+}
+@media only screen and (max-width: 768px) {
+}
+@media only screen and (max-width: 576px) {
+    #daftarRumahSakit{
+        padding-top: 5%;
+    }
+    .buttonBacktoSearch {
+        margin-left: 1rem;
+    }
+    .card {
+        margin: 0em 0em;
+        margin-top: 0.5em;
+        width: 100%;
+    }
+    .card-row2 {
+        margin-top: -2rem;
+    }
+    .buttonCall {
+        width: 100%;
+    }
+    .row2-rightSide {
+        float: left;
+        width: auto;
+        margin-top: 0.5em;
+    }
+    .buttonInformasiRight{
+        margin-left: -0.5em;
     }
 }

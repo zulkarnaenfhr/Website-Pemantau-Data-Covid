@@ -51,9 +51,16 @@
                     <div class="daftarRumahSakit-content row">
                         <div class="navInformation">
                             <h1 class="daftarRumahSakit-title">Daftar Rumah Sakit</h1>
-                            <h6 class="daftarRumahSakit-locationInfo">
-                                Provinsi <?php echo $getInformasiProvinsi ?>, Kota <?php echo $getInformasiKota ?>
-                            </h6>    
+                            <?php if ($type == 1) { ?>
+                                <h6 class="daftarRumahSakit-locationInfo">
+                                    Menampilkan Bed Covid untuk Provinsi <?php echo $getInformasiProvinsi ?>, Kota <?php echo $getInformasiKota ?>
+                                </h6> 
+                            <?php } else { ?>
+                                <h6 class="daftarRumahSakit-locationInfo">
+                                    Menampilkan Bed Non-Covid untuk Provinsi <?php echo $getInformasiProvinsi ?>, Kota <?php echo $getInformasiKota ?>
+                                </h6> 
+                            <?php } ?>
+                               
                             
                         </div>
                         <button class="buttonBacktoSearch">
@@ -67,7 +74,7 @@
                                 ?>
                                 <div class="card">
                                     <div class="card-body row">
-                                        <div class="col-8">
+                                        <div class="col-md-8">
                                             <h5 class="hospitalName">
                                                 <?php echo $dataHospital[$i]['name']; ?>
                                             </h5>
@@ -80,7 +87,7 @@
                                             ?>
                                             </h6>
                                         </div>
-                                        <div class="col-4 row1-rightSide">
+                                        <div class="col-md-4 row1-rightSide">
                                             <?php 
                                                 $availabel = $dataHospital[$i]['bed_availability'];
                                                 if ($availabel > 0) { ?>
@@ -112,8 +119,8 @@
                                             </h6>
                                         </div>
                                     </div>
-                                    <div class="card-body row">
-                                        <div class="col-6">
+                                    <div class="card-body row card-row2">
+                                        <div class="col-md-6">
                                             <button class="buttonCall">
                                                 <i class="fas fa-phone"></i>
                                                 <a href="tel:<?php echo $dataHospital[$i]['phone']?>">
@@ -121,17 +128,20 @@
                                                 </a>    
                                             </button>
                                         </div>
-                                        <div class="col-6">
-                                            <div class="row2-rightSide">
-                                                <button class="buttonHospitalInformation">
-                                                    <i class="fas fa-map-marker-alt"></i>
-                                                    <a href="https://www.google.co.id/maps/search/<?php echo $dataHospital[$i]['name'];?>">Lokasi</a>
-                                                </button>
-                                                <button class="buttonHospitalInformation">
-                                                    <a href="https://www.google.co.id/maps/search/<?php echo $dataHospital[$i]['name'];?>">Details</a>
-                                                </button>    
-                                            </div>
-                                            
+                                        <div class="col-md-6">
+                                            <div class="row row2-rightSide">
+                                                <div class="col-6">
+                                                    <button class="buttonHospitalInformation">
+                                                        <i class="fas fa-map-marker-alt"></i>
+                                                        <a href="https://www.google.co.id/maps/search/<?php echo $dataHospital[$i]['name'];?>">Maps</a>
+                                                    </button>
+                                                </div>
+                                                <div class="col-6 buttonInformasiRight">
+                                                    <button class="buttonHospitalInformation">
+                                                        <a href="https://www.google.co.id/maps/search/<?php echo $dataHospital[$i]['name'];?>">Details</a>
+                                                    </button>    
+                                                </div>
+                                            </div>   
                                         </div>
                                     </div>
                                 </div>
