@@ -81,12 +81,18 @@
         return $dataProvinsi;
     }
 
-    if(isset($_POST['kodeProv'])){
-        $kodeProv = $_POST["kodeProv"];
+    function getKota($kodeProv) {
         $apiGetKota = "https://rs-bed-covid-api.vercel.app/api/get-cities?provinceid=$kodeProv";
         $kontenKota = file_get_contents($apiGetKota);
         $dataKota = json_decode($kontenKota,true);
         $dataKota = $dataKota["cities"];
+
+        return $dataKota;
+    }
+
+    if(isset($_POST['kodeProv'])){
+        $kodeProv = $_POST["kodeProv"];
+        $dataKota = getKota($kodeProv);
 
         $varName = "name";
         for ($i=0; $i < count($dataKota); $i++) { 
@@ -99,5 +105,29 @@
         $data = json_decode($kontenHospital,true);
         $dataHospital = $data['hospitals'];
         return $dataHospital;
+    }
+
+    function getInformasiProvinsi($kodeProv){
+        $dataProvinsi = getProv();
+        
+        for ($i=0; $i < count($dataProvinsi) ; $i++) { 
+            if ($dataProvinsi[$i]['id'] == $kodeProv) {
+                return $dataProvinsi[$i]['name'];
+            }
+        }
+        $errorProv = "kodeProv Salah";
+        return  $errorProv;
+    }
+
+    function getInformasiKota($kodeProv,$kodeKota) {
+        $dataKota = getKota($kodeProv);
+
+        for ($i=0; $i < count($dataKota); $i++) { 
+            if ($dataKota[$i]['id'] == $kodeKota) {
+                return $dataKota[$i]['name'];
+            }
+        }
+        $errorKota = "kodeKota Salah";
+        return  $errorKota;
     }
 ?>

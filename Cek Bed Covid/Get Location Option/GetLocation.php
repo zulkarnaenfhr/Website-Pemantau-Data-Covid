@@ -30,7 +30,7 @@
                 <p class="GetLocation-Title">Cek Ketersediaan Bed <br> Rumah Sakit</p>
                 <div class="form-container">
                     <p class="GetLocation-Desc">Pilih Lokasi Pengecekkan Ketersediaan Bed</p>
-                    <form action="../Cek Bed Covid/DaftarRumahSakit.php" method="post">
+                    <form action="../Cek Bed Covid/DaftarRumahSakit.php" method="get">
                         <div class="radio-toolbar">
                             <input type="radio" id="Covid-Option" name="type" value="1" required>
                             <label for="Covid-Option">
