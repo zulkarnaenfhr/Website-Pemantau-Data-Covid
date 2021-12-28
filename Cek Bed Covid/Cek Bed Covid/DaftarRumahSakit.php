@@ -135,9 +135,13 @@
                                                     </button>
                                                 </div>
                                                 <div class="col-6 buttonInformasiRight">
-                                                    <button class="buttonHospitalInformation">
-                                                        <a href="https://www.google.co.id/maps/search/<?php echo $dataHospital[$i]['name'];?>">Details</a>
-                                                    </button>    
+                                                    <form action="../Details Rumah Sakit/DetailsRumahSakit.php" method="get">
+                                                        <input type="hidden" value="<?php echo $dataHospital[$i]['id'] ?>" name="idRumahSakit">
+                                                        <input type="hidden" value="<?php echo $type ?>" name="covidOrNonCovid">
+                                                        <button type="submit" class="buttonHospitalInformation">
+                                                            <a>Details</a>
+                                                        </button>    
+                                                    </form>
                                                 </div>
                                             </div>   
                                         </div>
@@ -163,19 +167,53 @@
                                             </h6>
                                             <h6>
                                             <?php
-                                                echo $dataHospital[$i]['info'];
+                                                echo $dataHospital[$i]['available_beds'][0]['info'];
                                             ?>
                                             </h6>
                                         </div>
                                         <div class="col-4">
-                                            <h6>
-                                                Tersedia
-                                            </h6>
-                                            <h6>
-                                            <?php
-                                                echo "masuk type 2"   
+                                            <?php 
+                                                $availabel = $dataHospital[$i]['available_beds'][0]['available'];
+                                                if ($availabel > 0) { ?>
+                                                    <h6>
+                                                        Tersedia, <span><?php echo $dataHospital[$i]['available_beds'][0]['bed_class']?></span>
+                                                    </h6>
+                                                    <h6>
+                                                    <?php
+                                                        echo $dataHospital[$i]['available_beds'][0]['available'];
+                                                    ?>
+                                                    </h6>
+                                            <?php    } else if ($availabel == 0) { ?>
+                                                    <h6 class="noAvailability">
+                                                        Maaf, Bed Penuh !</span>
+                                                    </h6>
+                                            <?php }
                                             ?>
-                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="card-body row card-row2">
+                                        <div class="col-md-6">
+                                            <button class="buttonCall">
+                                                <i class="fas fa-phone"></i>
+                                                <a href="tel:<?php echo $dataHospital[$i]['phone']?>">
+                                                    <?php echo $dataHospital[$i]['phone']?>
+                                                </a>    
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row row2-rightSide">
+                                                <div class="col-6">
+                                                    <button class="buttonHospitalInformation">
+                                                        <i class="fas fa-map-marker-alt"></i>
+                                                        <a href="https://www.google.co.id/maps/search/<?php echo $dataHospital[$i]['name'];?>">Maps</a>
+                                                    </button>
+                                                </div>
+                                                <div class="col-6 buttonInformasiRight">
+                                                    <button class="buttonHospitalInformation">
+                                                        <a href="https://www.google.co.id/maps/search/<?php echo $dataHospital[$i]['name'];?>">Details</a>
+                                                    </button>    
+                                                </div>
+                                            </div>   
                                         </div>
                                     </div>
                                 </div>
