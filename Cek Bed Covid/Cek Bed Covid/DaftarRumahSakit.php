@@ -136,6 +136,7 @@
                                                 </div>
                                                 <div class="col-6 buttonInformasiRight">
                                                     <form action="../Details Rumah Sakit/DetailsRumahSakit.php" method="get">
+                                                        <input type="hidden" value="<?php echo $dataHospital[$i]['name'] ?>" name="namaRS">
                                                         <input type="hidden" value="<?php echo $dataHospital[$i]['id'] ?>" name="idRumahSakit">
                                                         <input type="hidden" value="<?php echo $type ?>" name="covidOrNonCovid">
                                                         <button type="submit" class="buttonHospitalInformation">
@@ -209,9 +210,14 @@
                                                     </button>
                                                 </div>
                                                 <div class="col-6 buttonInformasiRight">
-                                                    <button class="buttonHospitalInformation">
-                                                        <a href="https://www.google.co.id/maps/search/<?php echo $dataHospital[$i]['name'];?>">Details</a>
-                                                    </button>    
+                                                    <form action="../Details Rumah Sakit/DetailsRumahSakit.php" method="get">
+                                                        <input type="hidden" value="<?php echo $dataHospital[$i]['name'] ?>" name="namaRS">
+                                                        <input type="hidden" value="<?php echo $dataHospital[$i]['id'] ?>" name="idRumahSakit">
+                                                        <input type="hidden" value="<?php echo $type ?>" name="covidOrNonCovid">
+                                                        <button type="submit" class="buttonHospitalInformation">
+                                                            <a>Details</a>
+                                                        </button>    
+                                                    </form>  
                                                 </div>
                                             </div>   
                                         </div>
